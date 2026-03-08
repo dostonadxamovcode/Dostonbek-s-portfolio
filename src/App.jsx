@@ -3,7 +3,7 @@ import MainLoyauts from "./mainloyauts/MainLoyauts"
 import Home from "./pages/home"
 import About from "./pages/about"
 import Project from "./pages/project"
-import Contact from "./pages/contact"
+import Contact from "./pages/Contact"
 
 
 
