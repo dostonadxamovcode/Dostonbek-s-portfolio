@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import MainLoyauts from "./mainloyauts/MainLoyauts"
-import Home from "./pages/home"
-import About from "./pages/about"
-import Project from "./pages/project"
 import Contact from "./pages/Contact"
+import Home from './pages/Home';
+import About from './pages/About';
+import Project from './pages/Project';
 
 
 
