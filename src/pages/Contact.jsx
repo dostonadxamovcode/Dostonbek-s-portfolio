@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const BOT_TOKEN = "8657959051:AAEXc24KBhr5QPcOT0Id5cCA25NK5ZEc8tQ";
-const CHAT_ID = "6721806013";
-
 const EMAILJS_SERVICE_ID = "service_az2wx1h";
 const EMAILJS_TEMPLATE_ID = "template_64rop9a";
 const EMAILJS_PUBLIC_KEY = "FB10NnpCU1ntzPuIC";
@@ -38,10 +35,10 @@ function useScrollReveal(delay = 0) {
 }
 
 const socials = [
-  { label: "GitHub", url: "https://github.com/doston.adxamov.code@gmail.com" },
+  { label: "GitHub", url: "https://github.com/dostonadxamovcode" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/doston-adxamov-47709a320/?trk=launchpad_feed" },
   { label: "Telegram", url: "https://t.me/uzco_der" },
-  { label: "Email", url: "mailto:doston.adxamov.code@email.com" },
+  { label: "Email", url: "mailto:doston.adxamov.code@gmail.com" },
 ];
 
 export default function Contact() {
@@ -59,35 +56,24 @@ export default function Contact() {
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus("loading");
-
-    const text = `📩 New Message!\n\n👤 Name: ${form.name}\n📧 Email: ${form.email}\n💬 Message:\n${form.message}`;
-
+     console.log("Form data:", form);
     try {
-      const [telegramRes] = await Promise.all([
-        fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: CHAT_ID, text }),
-        }),
-        emailjs.send(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_TEMPLATE_ID,
-          {
-            from_name: form.name,
-            from_email: form.email,
-            message: form.message,
-          },
-          EMAILJS_PUBLIC_KEY
-        ),
-      ]);
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+          reply_to: form.email,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
 
-      if (telegramRes.ok) {
-        setStatus("sent");
-        setForm({ name: "", email: "", message: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
+      setStatus("sent");
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      console.error("EmailJS error:", err);
       setStatus("error");
     }
   }
