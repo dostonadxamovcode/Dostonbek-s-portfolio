@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -15,5 +16,6 @@ AOS.init({
 createRoot(document.getElementById('root')).render(
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <App />
+        <SpeedInsights />
     </ThemeProvider>
 )
