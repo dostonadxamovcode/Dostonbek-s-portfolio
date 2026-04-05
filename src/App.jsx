@@ -4,6 +4,8 @@ import Contact from "./pages/Contact"
 import Home from './pages/Home';
 import About from './pages/About';
 import Project from './pages/Project';
+import Blog from "./pages/Blog";
+import BlogDetail from "./pages/BlogDetail";
 
 
 
@@ -26,6 +28,14 @@ export default function App() {
         {  
           path: "/projects",
           element: <Project/>
+        },
+        {
+          path: "/blog",
+          element: <Blog/>
+        },
+        {
+          path: "/blog/:slug",
+          element: <BlogDetail/>
         },
         {
           path: "/contact",
