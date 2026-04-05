@@ -12,13 +12,14 @@ import { CgDarkMode } from "react-icons/cg";
 import { FcAbout, FcHome } from "react-icons/fc";
 import { GoProjectSymlink } from "react-icons/go";
 import { MdOutlineContacts } from "react-icons/md";
+import { FaRegNewspaper } from "react-icons/fa";
 
 export default function MainLoyauts() {
   const { theme, setTheme } = useTheme();
 
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden">
-      <header className="sticky top-0 z-50 w-full backdrop-blur-md">
+      <header className="sticky top-3 sm:top-4 z-50 w-full backdrop-blur-md">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <nav className=" grid grid-cols-2 md:grid-cols-3 items-center h-14 sm:h-16">
 
@@ -41,6 +42,7 @@ export default function MainLoyauts() {
                 {[
                   { to: "/", label: "Home" },
                   { to: "/projects", label: "Projects" },
+                  { to: "/blog", label: "Blog" },
                   { to: "/about", label: "About" },
                   { to: "/contact", label: "Contact" },
                 ].map((item) => (
@@ -98,6 +100,7 @@ export default function MainLoyauts() {
                         { to: "/", label: "Home", icon: <FcHome /> },
                         { to: "/about", label: "About", icon: <FcAbout /> },
                         { to: "/projects", label: "Projects", icon: <GoProjectSymlink /> },
+                        { to: "/blog", label: "Blog", icon: <FaRegNewspaper /> },
                       ].map((item) => (
                         <MenubarItem key={item.to} className="cursor-pointer rounded-lg">
                           <Link
