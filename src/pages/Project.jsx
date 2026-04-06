@@ -38,11 +38,11 @@ const projects = [
     date: "Jan 2026",
   },
   {
-    title: "Tez orada...",
-    description: "",
-    url: "https://example.com",
-    badges: [],
-    date: "",
+    title: "EduManage - Ta'lim boshqaruv tizimi",
+    description: "A web application for managing educational institutions, built with React and Node.js.",
+    url: "https://edu-manage-wheat.vercel.app/",
+    badges: ["React", "Node.js"],
+    date: "Feb 2026",
   },
   {
     title: "Tez orada...",
