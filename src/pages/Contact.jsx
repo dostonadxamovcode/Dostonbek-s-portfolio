@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -42,6 +43,7 @@ const socials = [
 ];
 
 export default function Contact() {
+  const { t } = useTranslation();
   const headerRef = useScrollReveal(0);
   const formRef = useScrollReveal(100);
   const socialsRef = useScrollReveal(200);
@@ -84,57 +86,57 @@ export default function Contact() {
         <div className="flex items-center gap-2">
           <span className="inline-block w-5 h-[2px] bg-amber-500"></span>
           <span className="text-xs font-semibold tracking-[0.15em] uppercase text-amber-500">
-            Contact
+            {t("contact.eyebrow")}
           </span>
         </div>
         <h1
           className="text-3xl sm:text-4xl font-bold tracking-tight font-display"
         >
-          Get in Touch
+          {t("contact.heading")}
         </h1>
         <p className="text-sm opacity-60 pt-1">
-          Have a project in mind? Feel free to reach out.
+          {t("contact.description")}
         </p>
       </div>
 
       <div ref={formRef} className="space-y-4 border-b border-border pb-10">
         {status === "sent" ? (
           <div className="py-8 text-center space-y-2">
-            <p className="text-amber-500 text-sm font-medium">✓ Message sent!</p>
-            <p className="text-xs opacity-50">I'll get back to you as soon as possible.</p>
+            <p className="text-amber-500 text-sm font-medium">✓ {t("contact.sent")}</p>
+            <p className="text-xs opacity-50">{t("contact.sentDesc")}</p>
           </div>
         ) : (
           <div className="space-y-3">
             <div className="flex gap-3">
               <div className="flex-1 space-y-1">
-                <label className="text-xs uppercase tracking-widest opacity-40">Name</label>
+                <label className="text-xs uppercase tracking-widest opacity-40">{t("contact.nameLabel")}</label>
                 <input
                   name="name"
                   value={form.name}
                   onChange={handleChange}
-                  placeholder="Your name"
+                  placeholder={t("contact.namePlaceholder")}
                   className="w-full bg-transparent border border-border rounded-lg px-3 py-2 text-sm outline-none focus:border-amber-500 transition-colors duration-200 placeholder:opacity-30"
                 />
               </div>
               <div className="flex-1 space-y-1">
-                <label className="text-xs uppercase tracking-widest opacity-40">Email</label>
+                <label className="text-xs uppercase tracking-widest opacity-40">{t("contact.emailLabel")}</label>
                 <input
                   name="email"
                   value={form.email}
                   onChange={handleChange}
-                  placeholder="your@email.com"
+                  placeholder={t("contact.emailPlaceholder")}
                   className="w-full bg-transparent border border-border rounded-lg px-3 py-2 text-sm outline-none focus:border-amber-500 transition-colors duration-200 placeholder:opacity-30"
                 />
               </div>
             </div>
 
             <div className="space-y-1">
-              <label className="text-xs uppercase tracking-widest opacity-40">Message</label>
+              <label className="text-xs uppercase tracking-widest opacity-40">{t("contact.messageLabel")}</label>
               <textarea
                 name="message"
                 value={form.message}
                 onChange={handleChange}
-                placeholder="Tell me about your project..."
+                placeholder={t("contact.messagePlaceholder")}
                 rows={5}
                 className="w-full bg-transparent border border-border rounded-lg px-3 py-2 text-sm outline-none focus:border-amber-500 transition-colors duration-200 placeholder:opacity-30 resize-none"
               />
@@ -145,18 +147,18 @@ export default function Contact() {
               disabled={status === "loading"}
               className="text-xs font-medium px-4 py-2 border border-border rounded-lg hover:border-amber-500 hover:text-amber-500 transition-colors duration-200 disabled:opacity-40"
             >
-              {status === "loading" ? "Sending..." : "Send Message →"}
+              {status === "loading" ? t("contact.sending") : `${t("contact.send")} →`}
             </button>
 
             {status === "error" && (
-              <p className="text-xs text-red-400">Something went wrong. Please try again.</p>
+              <p className="text-xs text-red-400">{t("contact.error")}</p>
             )}
           </div>
         )}
       </div>
 
       <div ref={socialsRef} className="space-y-4">
-        <h2 className="text-xs font-semibold tracking-widest uppercase opacity-40">Elsewhere</h2>
+        <h2 className="text-xs font-semibold tracking-widest uppercase opacity-40">{t("contact.elsewhere")}</h2>
         <div className="space-y-2">
           {socials.map((s) => (
             <a

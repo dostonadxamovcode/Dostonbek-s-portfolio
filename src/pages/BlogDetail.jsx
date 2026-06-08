@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import { blogPosts } from "../data/blogPosts";
+import { useTranslation } from "react-i18next";
+import { blogPosts, translatePost } from "../data/blogPosts";
 
 function useScrollReveal(delay = 0) {
   const ref = useRef(null);
@@ -32,8 +33,10 @@ function useScrollReveal(delay = 0) {
 }
 
 export default function BlogDetail() {
+  const { t } = useTranslation();
   const { slug } = useParams();
-  const post = blogPosts.find((item) => item.slug === slug);
+  const rawPost = blogPosts.find((item) => item.slug === slug);
+  const post = rawPost ? translatePost(t, rawPost) : null;
 
   const heroRef = useScrollReveal(0);
   const contentRef = useScrollReveal(120);
@@ -43,27 +46,30 @@ export default function BlogDetail() {
     return (
       <div className="max-w-3xl mx-auto py-16 sm:py-20 text-center space-y-5">
         <p className="text-xs uppercase tracking-[0.2em] text-amber-500 font-semibold">
-          Blog
+          {t("blogDetail.notFoundTag")}
         </p>
         <h1
           className="text-3xl sm:text-4xl font-bold font-display"
         >
-          Post topilmadi
+          {t("blogDetail.notFoundTitle")}
         </h1>
         <p className="text-sm opacity-60">
-          Bu maqola mavjud emas yoki havola o'zgargan.
+          {t("blogDetail.notFoundDesc")}
         </p>
         <Link
           to="/blog"
           className="inline-flex items-center justify-center rounded-full border border-border px-5 py-2.5 text-sm font-medium no-underline hover:border-amber-500 hover:text-amber-500 transition-colors duration-200"
         >
-          Blogga qaytish
+          {t("blogDetail.backToBlog")}
         </Link>
       </div>
     );
   }
 
-  const relatedPosts = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 2);
+  const relatedPosts = blogPosts
+    .filter((item) => item.slug !== post.slug)
+    .slice(0, 2)
+    .map((item) => translatePost(t, item));
   const takeaway = post.sections[post.sections.length - 1]?.paragraphs[0];
 
   return (
@@ -78,7 +84,7 @@ export default function BlogDetail() {
             to="/blog"
             className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] opacity-60 no-underline hover:text-amber-500 transition-colors duration-200"
           >
-            ← Back to blog
+            ← {t("blogDetail.backToBlog")}
           </Link>
 
           <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] opacity-60">
@@ -128,14 +134,14 @@ export default function BlogDetail() {
         <aside ref={relatedRef} className="space-y-4">
           <div className="rounded-[2rem] border border-border p-6">
             <p className="text-xs uppercase tracking-[0.2em] text-amber-500 font-semibold">
-              Asosiy xulosa
+              {t("blogDetail.keyTakeaway")}
             </p>
             <p className="mt-4 text-sm leading-relaxed opacity-75">{takeaway}</p>
           </div>
 
           <div className="rounded-[2rem] border border-border p-6">
             <p className="text-xs uppercase tracking-[0.2em] text-amber-500 font-semibold">
-              Boshqa postlar
+              {t("blogDetail.otherPosts")}
             </p>
             <div className="mt-4 space-y-3">
               {relatedPosts.map((item) => (

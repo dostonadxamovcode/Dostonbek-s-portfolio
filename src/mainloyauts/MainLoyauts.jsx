@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   Menubar,
   MenubarContent,
@@ -8,12 +9,30 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { ModeToggle } from "../components/mode-toggle";
+import { LanguageSwitcher } from "../components/language-switcher";
 import { FcAbout, FcHome } from "react-icons/fc";
 import { GoProjectSymlink } from "react-icons/go";
 import { MdOutlineContacts } from "react-icons/md";
 import { FaRegNewspaper } from "react-icons/fa";
 
 export default function MainLoyauts() {
+  const { t } = useTranslation();
+
+  const navItems = [
+    { to: "/", label: t("nav.home") },
+    { to: "/projects", label: t("nav.projects") },
+    { to: "/blog", label: t("nav.blog") },
+    { to: "/about", label: t("nav.about") },
+    { to: "/contact", label: t("nav.contact") },
+  ];
+
+  const menuItems = [
+    { to: "/", label: t("nav.home"), icon: <FcHome /> },
+    { to: "/about", label: t("nav.about"), icon: <FcAbout /> },
+    { to: "/projects", label: t("nav.projects"), icon: <GoProjectSymlink /> },
+    { to: "/blog", label: t("nav.blog"), icon: <FaRegNewspaper /> },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden">
       <header className="sticky top-3 sm:top-4 z-50 w-full backdrop-blur-md">
@@ -35,13 +54,7 @@ export default function MainLoyauts() {
             {/* Center */}
             <div className="hidden md:flex justify-center">
               <div className="flex items-center gap-1">
-                {[
-                  { to: "/", label: "Home" },
-                  { to: "/projects", label: "Projects" },
-                  { to: "/blog", label: "Blog" },
-                  { to: "/about", label: "About" },
-                  { to: "/contact", label: "Contact" },
-                ].map((item) => (
+                {navItems.map((item) => (
                   <Link
                     key={item.to}
                     to={item.to}
@@ -69,6 +82,7 @@ export default function MainLoyauts() {
 
             {/* Right */}
             <div className="flex items-center justify-end gap-2">
+              <LanguageSwitcher />
               <ModeToggle />
 
               <div className="md:hidden">
@@ -80,19 +94,14 @@ export default function MainLoyauts() {
                         <rect y="7" width="16" height="1.5" rx="1" fill="currentColor" />
                         <rect y="12" width="16" height="1.5" rx="1" fill="currentColor" />
                       </svg>
-                      <span>Menu</span>
+                      <span>{t("nav.menu")}</span>
                     </MenubarTrigger>
 
                     <MenubarContent
                       align="end"
                       className="w-48 border shadow-xl rounded-xl mt-1 p-1.5"
                     >
-                      {[
-                        { to: "/", label: "Home", icon: <FcHome /> },
-                        { to: "/about", label: "About", icon: <FcAbout /> },
-                        { to: "/projects", label: "Projects", icon: <GoProjectSymlink /> },
-                        { to: "/blog", label: "Blog", icon: <FaRegNewspaper /> },
-                      ].map((item) => (
+                      {menuItems.map((item) => (
                         <MenubarItem key={item.to} className="cursor-pointer rounded-lg">
                           <Link
                             to={item.to}
@@ -112,7 +121,7 @@ export default function MainLoyauts() {
                           className="w-full flex items-center gap-2.5 px-1 py-1.5 font-medium text-sm no-underline"
                         >
                           <span className="text-base"><MdOutlineContacts /></span>
-                          Contact
+                          {t("nav.contact")}
                         </Link>
                       </MenubarItem>
                     </MenubarContent>
@@ -133,7 +142,7 @@ export default function MainLoyauts() {
       <footer className="w-full border-t">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-2 sm:py-3">
           <p className="text-xs font-medium text-center opacity-60">
-            © 2026 Dostonbek. All rights reserved.
+            {t("footer.rights")}
           </p>
         </div>
       </footer>

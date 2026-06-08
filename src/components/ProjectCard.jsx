@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 function TechBadge({ children }) {
   return (
     <span className="text-xs px-2.5 py-1 rounded-full border border-border opacity-70">
@@ -7,6 +9,7 @@ function TechBadge({ children }) {
 }
 
 function VisitButton({ url }) {
+  const { t } = useTranslation();
   return (
     <a
       href={url}
@@ -14,7 +17,7 @@ function VisitButton({ url }) {
       rel="noopener noreferrer"
       className="inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 border border-border rounded-lg hover:border-amber-500 hover:text-amber-500 transition-colors duration-200 no-underline"
     >
-      Visit project
+      {t("projectCard.visitProject")}
       <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
     </a>
   );
@@ -26,7 +29,11 @@ function VisitButton({ url }) {
  * default renders a stacked grid card.
  */
 export default function ProjectCard({ project, featured = false }) {
-  const { title, subtitle, pitch, achievement, tech, url, image, date } = project;
+  const { t } = useTranslation();
+  const { title, i18nKey, tech, url, image, date } = project;
+  const subtitle = t(`projectData.${i18nKey}.subtitle`);
+  const pitch = t(`projectData.${i18nKey}.pitch`);
+  const achievement = t(`projectData.${i18nKey}.achievement`);
 
   const media = (
     <a

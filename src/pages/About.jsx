@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   FaReact,
   FaHtml5,
@@ -42,7 +43,7 @@ function useScrollReveal(delay = 0) {
 
 const techStack = [
   {
-    category: "Frontend",
+    categoryKey: "frontend",
     items: [
       { name: "React", icon: FaReact },
       { name: "JavaScript", icon: FaJs },
@@ -52,7 +53,7 @@ const techStack = [
     ],
   },
   {
-    category: "Tools",
+    categoryKey: "tools",
     items: [
       { name: "Git", icon: FaGitAlt },
       { name: "Figma", icon: FaFigma },
@@ -63,39 +64,8 @@ const techStack = [
 ];
 
 const learning = [
-  {
-    name: "TypeScript",
-    note: "Adding type safety to React components and shared utilities.",
-    icon: SiTypescript,
-  },
-  {
-    name: "Next.js",
-    note: "Learning server-side rendering, routing and data fetching patterns.",
-    icon: SiNextdotjs,
-  },
-];
-
-const education = [
-  {
-    degree: "Digital information processing specialist",
-    school: "Fergana Lola Murotova college",
-    date: "2025 — 2026",
-  },
-];
-
-const experience = [
-  {
-    role: "Frontend Developer",
-    company: "Zamon agency",
-    date: "2024 — Present",
-    desc: "Building responsive web applications for clients.",
-  },
-];
-
-const facts = [
-  { label: "Based in", value: "Fergana, Uzbekistan" },
-  { label: "Focus", value: "React & Tailwind CSS" },
-  { label: "Status", value: "Open to opportunities" },
+  { name: "TypeScript", noteKey: "learningTypeScriptNote", icon: SiTypescript },
+  { name: "Next.js", noteKey: "learningNextNote", icon: SiNextdotjs },
 ];
 
 function SectionLabel({ children }) {
@@ -105,6 +75,12 @@ function SectionLabel({ children }) {
 }
 
 export default function About() {
+  const { t } = useTranslation();
+  const facts = [
+    { label: t("about.basedIn"), value: t("about.basedInValue") },
+    { label: t("about.focus"), value: t("about.focusValue") },
+    { label: t("about.status"), value: t("about.statusValue") },
+  ];
   const headerRef = useScrollReveal(0);
   const bioRef = useScrollReveal(100);
   const stackRef = useScrollReveal(150);
@@ -128,11 +104,11 @@ export default function About() {
               <div className="flex items-center gap-2">
                 <span className="inline-block w-5 h-[2px] bg-amber-500"></span>
                 <span className="text-xs font-semibold tracking-[0.15em] uppercase text-amber-500">
-                  About Me
+                  {t("about.eyebrow")}
                 </span>
               </div>
               <h1 className="text-2xl xl:text-3xl font-bold tracking-tight font-display">
-                Dostonbek
+                {t("about.name")}
               </h1>
             </div>
           </div>
@@ -150,7 +126,7 @@ export default function About() {
             to="/contact"
             className="inline-flex items-center gap-2 text-xs font-medium px-4 py-2 border border-border rounded-lg hover:border-amber-500 hover:text-amber-500 transition-colors duration-200 no-underline"
           >
-            Get in touch
+            {t("about.getInTouch")}
             <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
           </Link>
         </aside>
@@ -160,20 +136,19 @@ export default function About() {
 
           {/* Bio */}
           <div ref={bioRef} className="space-y-2 border-b border-border pb-8 xl:pb-10">
-            <SectionLabel>Bio</SectionLabel>
+            <SectionLabel>{t("about.bioLabel")}</SectionLabel>
             <p className="text-sm sm:text-base leading-relaxed opacity-80 max-w-2xl">
-              I'm a frontend developer passionate about building clean, fast, and accessible web experiences.
-              I focus on writing maintainable code and thoughtful UI design. Currently open to new opportunities.
+              {t("about.bioText")}
             </p>
           </div>
 
           {/* Tech Stack */}
           <div ref={stackRef} className="space-y-5 border-b border-border pb-8 xl:pb-10">
-            <SectionLabel>Tech Stack</SectionLabel>
+            <SectionLabel>{t("about.techStackLabel")}</SectionLabel>
             <div className="grid gap-6 sm:grid-cols-2">
               {techStack.map((group) => (
-                <div key={group.category} className="space-y-3">
-                  <p className="text-sm font-medium opacity-60">{group.category}</p>
+                <div key={group.categoryKey} className="space-y-3">
+                  <p className="text-sm font-medium opacity-60">{t(`about.${group.categoryKey}`)}</p>
                   <div className="grid grid-cols-2 gap-2">
                     {group.items.map(({ name, icon: Icon }) => (
                       <div
@@ -192,14 +167,14 @@ export default function About() {
 
           {/* Currently Learning */}
           <div ref={learningRef} className="space-y-5 border-b border-border pb-8 xl:pb-10">
-            <SectionLabel>Currently Learning</SectionLabel>
+            <SectionLabel>{t("about.learningLabel")}</SectionLabel>
             <div className="grid gap-3 sm:grid-cols-2">
-              {learning.map(({ name, note, icon: Icon }) => (
+              {learning.map(({ name, noteKey, icon: Icon }) => (
                 <div key={name} className="flex gap-3 rounded-xl border border-border p-4">
                   <Icon className="mt-0.5 text-lg text-amber-500 shrink-0" />
                   <div className="space-y-1">
                     <p className="text-sm font-semibold">{name}</p>
-                    <p className="text-xs leading-relaxed opacity-60">{note}</p>
+                    <p className="text-xs leading-relaxed opacity-60">{t(`about.${noteKey}`)}</p>
                   </div>
                 </div>
               ))}
@@ -208,34 +183,30 @@ export default function About() {
 
           {/* Experience */}
           <div ref={expRef} className="space-y-4 border-b border-border pb-8 xl:pb-10">
-            <SectionLabel>Experience</SectionLabel>
+            <SectionLabel>{t("about.experienceLabel")}</SectionLabel>
             <div className="space-y-4">
-              {experience.map((e, i) => (
-                <div key={i} className="flex gap-4 items-start">
-                  <span className="text-xs opacity-40 w-24 shrink-0 pt-0.5 leading-relaxed">{e.date}</span>
-                  <div className="space-y-0.5">
-                    <p className="text-sm font-semibold">{e.role}</p>
-                    <p className="text-xs opacity-50">{e.company}</p>
-                    <p className="text-xs opacity-60 leading-relaxed pt-0.5">{e.desc}</p>
-                  </div>
+              <div className="flex gap-4 items-start">
+                <span className="text-xs opacity-40 w-24 shrink-0 pt-0.5 leading-relaxed">{t("about.experienceDate")}</span>
+                <div className="space-y-0.5">
+                  <p className="text-sm font-semibold">{t("about.experienceRole")}</p>
+                  <p className="text-xs opacity-50">{t("about.experienceCompany")}</p>
+                  <p className="text-xs opacity-60 leading-relaxed pt-0.5">{t("about.experienceDesc")}</p>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
 
           {/* Education */}
           <div ref={eduRef} className="space-y-4">
-            <SectionLabel>Education</SectionLabel>
+            <SectionLabel>{t("about.educationLabel")}</SectionLabel>
             <div className="space-y-4">
-              {education.map((e, i) => (
-                <div key={i} className="flex gap-4 items-start">
-                  <span className="text-xs opacity-40 w-24 shrink-0 pt-0.5 leading-relaxed">{e.date}</span>
-                  <div className="space-y-0.5">
-                    <p className="text-sm font-semibold">{e.degree}</p>
-                    <p className="text-xs opacity-50">{e.school}</p>
-                  </div>
+              <div className="flex gap-4 items-start">
+                <span className="text-xs opacity-40 w-24 shrink-0 pt-0.5 leading-relaxed">{t("about.educationDate")}</span>
+                <div className="space-y-0.5">
+                  <p className="text-sm font-semibold">{t("about.educationDegree")}</p>
+                  <p className="text-xs opacity-50">{t("about.educationSchool")}</p>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
 

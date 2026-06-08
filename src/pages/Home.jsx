@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 
@@ -26,6 +27,7 @@ function useScrollReveal(options = {}) {
 const photo = "/image2.jpg";
 
 export default function Home() {
+  const { t } = useTranslation();
   const leftRef = useScrollReveal();
   const imageRef = useScrollReveal();
   const statsRef = useScrollReveal();
@@ -66,7 +68,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <span className="inline-block w-5 sm:w-6 h-0.5 bg-amber-500"></span>
             <span className="text-xs font-semibold tracking-[0.15em] uppercase text-amber-500">
-              Frontend Developer
+              {t("home.eyebrow")}
             </span>
           </div>
 
@@ -74,14 +76,13 @@ export default function Home() {
           <h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight font-display"
           >
-            Hi, I'm <br />
-            <span className="italic text-amber-500">Dostonbek</span>
+            {t("home.greeting")} <br />
+            <span className="italic text-amber-500">{t("home.name")}</span>
           </h1>
 
           {/* Description */}
           <p className="text-sm sm:text-base lg:text-lg leading-relaxed font-normal max-w-sm sm:max-w-md">
-            Crafting seamless digital experiences with modern web technologies.
-            Clean code. Thoughtful design. Real results.
+            {t("home.description")}
           </p>
 
           {/* Buttons */}
@@ -99,7 +100,7 @@ export default function Home() {
                 shadow-sm hover:shadow-md
               "
             >
-              View My Projects →
+              {t("home.viewProjects")} →
             </Link>
             <Link
               to="/contact"
@@ -113,14 +114,31 @@ export default function Home() {
                 font-medium text-sm tracking-wide
               "
             >
-              Contact Me
+              {t("home.contactMe")}
             </Link>
+            <a
+              href="/Dostonbek_Adxamov_Resume.pdf"
+              download
+              className="
+                w-full sm:w-auto text-center inline-flex items-center justify-center gap-2
+                px-4 py-2.5 sm:px-6 sm:py-3
+                border border-border
+                rounded-lg hover:border-amber-500 hover:text-amber-500
+                active:scale-95
+                transition-all duration-200
+                font-medium text-sm tracking-wide
+                no-underline
+              "
+            >
+              <span>↓</span>
+              {t("home.downloadCV")}
+            </a>
           </div>
 
           {/* Currently working with — concrete signal instead of vanity stats */}
           <div ref={statsRef} className="reveal-up space-y-2 pt-4 sm:pt-5 border-t border-border">
             <p className="text-xs uppercase tracking-widest opacity-40">
-              Currently working with
+              {t("home.currentlyWorking")}
             </p>
             <div className="flex flex-wrap gap-1.5">
               {["React", "JavaScript", "Tailwind CSS", "Node.js", "Git"].map((t) => (
@@ -159,20 +177,20 @@ export default function Home() {
             <div className="flex items-center gap-2">
               <span className="inline-block w-5 h-[2px] bg-amber-500"></span>
               <span className="text-xs font-semibold tracking-[0.15em] uppercase text-amber-500">
-                Featured work
+                {t("home.featuredLabel")}
               </span>
             </div>
             <h2
               className="text-2xl sm:text-3xl font-bold tracking-tight font-display"
             >
-              Latest case study
+              {t("home.featuredHeading")}
             </h2>
           </div>
           <Link
             to="/projects"
             className="text-sm font-medium hover:text-amber-500 transition-colors duration-200 no-underline whitespace-nowrap"
           >
-            View all projects →
+            {t("home.viewAllProjects")} →
           </Link>
         </div>
 

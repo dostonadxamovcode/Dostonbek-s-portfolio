@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { blogPosts } from "../data/blogPosts";
+import { useTranslation } from "react-i18next";
+import { blogPosts, translatePost } from "../data/blogPosts";
 
 function useScrollReveal(delay = 0) {
   const ref = useRef(null);
@@ -32,9 +33,12 @@ function useScrollReveal(delay = 0) {
 }
 
 export default function Blog() {
+  const { t } = useTranslation();
   const headerRef = useScrollReveal(0);
   const introRef = useScrollReveal(100);
   const listRef = useScrollReveal(200);
+
+  const posts = blogPosts.map((post) => translatePost(t, post));
 
   return (
     <div className="max-w-4xl mx-auto py-10 sm:py-16 space-y-10">
@@ -42,17 +46,16 @@ export default function Blog() {
         <div className="flex items-center gap-2">
           <span className="inline-block w-5 h-[2px] bg-amber-500"></span>
           <span className="text-xs font-semibold tracking-[0.15em] uppercase text-amber-500">
-            Blog
+            {t("blog.eyebrow")}
           </span>
         </div>
         <h1
           className="text-3xl sm:text-4xl font-bold tracking-tight font-display"
         >
-          Fikrlar, tajriba va foydali yozuvlar
+          {t("blog.heading")}
         </h1>
         <p className="text-sm sm:text-base opacity-70 max-w-2xl leading-relaxed">
-          Bu sahifada frontend, dizayn va o'sish jarayonimdagi foydali mavzularni
-          ulashaman. Blog portfolio ichida jonli kontent markazi sifatida ishlaydi.
+          {t("blog.description")}
         </p>
       </div>
 
@@ -61,9 +64,9 @@ export default function Blog() {
         className="flex flex-wrap items-center gap-2 border-y border-border py-6"
       >
         <span className="text-xs uppercase tracking-widest opacity-40 mr-1">
-          Topics
+          {t("blog.topics")}
         </span>
-        {[...new Set(blogPosts.map((post) => post.tag))].map((tag) => (
+        {[...new Set(posts.map((post) => post.tag))].map((tag) => (
           <span
             key={tag}
             className="text-xs px-3 py-1 rounded-full border border-border opacity-70"
@@ -78,16 +81,15 @@ export default function Blog() {
           <h2
             className="text-xl sm:text-2xl font-semibold font-display"
           >
-            So'nggi postlar
+            {t("blog.recentPosts")}
           </h2>
           <p className="text-sm opacity-60">
-            Frontend amaliyoti, dizayn qarorlari va real loyihalarda qo'lga
-            kiritilgan tajribalar haqida qisqa yozuvlar.
+            {t("blog.recentPostsDesc")}
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-3">
-          {blogPosts.map((post) => (
+          {posts.map((post) => (
             <Link
               key={post.slug}
               to={`/blog/${post.slug}`}
@@ -107,7 +109,7 @@ export default function Blog() {
               </p>
               <div className="mt-5 flex items-center justify-between text-xs font-medium">
                 <span className="opacity-50">{post.readTime}</span>
-                <span className="text-amber-500">Read article →</span>
+                <span className="text-amber-500">{t("blog.readArticle")} →</span>
               </div>
             </Link>
           ))}

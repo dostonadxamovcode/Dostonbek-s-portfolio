@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 
@@ -32,6 +33,7 @@ function useScrollReveal(delay = 0) {
 }
 
 export default function Projects() {
+  const { t } = useTranslation();
   const headerRef = useScrollReveal(0);
 
   return (
@@ -40,18 +42,16 @@ export default function Projects() {
         <div className="flex items-center gap-2">
           <span className="inline-block w-5 h-[2px] bg-amber-500"></span>
           <span className="text-xs font-semibold tracking-[0.15em] uppercase text-amber-500">
-            Portfolio
+            {t("projects.eyebrow")}
           </span>
         </div>
         <h1
           className="text-3xl sm:text-4xl font-bold tracking-tight font-display"
         >
-          Selected Projects
+          {t("projects.heading")}
         </h1>
         <p className="text-sm sm:text-base opacity-70 leading-relaxed">
-          A handful of real, shipped work — each one built end to end, from layout
-          to deployment. More case studies are in progress and will land here as
-          they go live.
+          {t("projects.description")}
         </p>
       </div>
 
