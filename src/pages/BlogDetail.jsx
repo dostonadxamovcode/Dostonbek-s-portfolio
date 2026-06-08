@@ -42,12 +42,11 @@ export default function BlogDetail() {
   if (!post) {
     return (
       <div className="max-w-3xl mx-auto py-16 sm:py-20 text-center space-y-5">
-        <p className="text-[10px] uppercase tracking-[0.2em] text-amber-500 font-semibold">
+        <p className="text-xs uppercase tracking-[0.2em] text-amber-500 font-semibold">
           Blog
         </p>
         <h1
-          className="text-3xl sm:text-4xl font-bold"
-          style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          className="text-3xl sm:text-4xl font-bold font-display"
         >
           Post topilmadi
         </h1>
@@ -65,6 +64,7 @@ export default function BlogDetail() {
   }
 
   const relatedPosts = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 2);
+  const takeaway = post.sections[post.sections.length - 1]?.paragraphs[0];
 
   return (
     <div className="max-w-5xl mx-auto py-10 sm:py-16 space-y-10">
@@ -81,7 +81,7 @@ export default function BlogDetail() {
             ← Back to blog
           </Link>
 
-          <div className="flex flex-wrap items-center gap-3 text-[10px] uppercase tracking-[0.18em] opacity-60">
+          <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.18em] opacity-60">
             <span className="rounded-full border border-border px-3 py-1">{post.tag}</span>
             <span>{post.date}</span>
             <span>{post.readTime}</span>
@@ -89,8 +89,7 @@ export default function BlogDetail() {
 
           <div className="max-w-3xl space-y-4">
             <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
-              style={{ fontFamily: "'Cormorant Garamond', serif" }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight font-display"
             >
               {post.title}
             </h1>
@@ -107,8 +106,7 @@ export default function BlogDetail() {
             {post.sections.map((section) => (
               <section key={section.heading} className="space-y-4">
                 <h2
-                  className="text-2xl sm:text-3xl font-semibold"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  className="text-2xl sm:text-3xl font-semibold font-display"
                 >
                   {section.heading}
                 </h2>
@@ -129,17 +127,14 @@ export default function BlogDetail() {
 
         <aside ref={relatedRef} className="space-y-4">
           <div className="rounded-[2rem] border border-border p-6">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-amber-500 font-semibold">
-              Qisqacha
+            <p className="text-xs uppercase tracking-[0.2em] text-amber-500 font-semibold">
+              Asosiy xulosa
             </p>
-            <div className="mt-4 space-y-3 text-sm opacity-75">
-              <p>Bu sahifa uzunroq matnlarni alohida va o'qishga qulay formatda ko'rsatadi.</p>
-              <p>Katta sarlavha, bo'limlarga ajratilgan kontent va toza spacing matnni chiroyli qiladi.</p>
-            </div>
+            <p className="mt-4 text-sm leading-relaxed opacity-75">{takeaway}</p>
           </div>
 
           <div className="rounded-[2rem] border border-border p-6">
-            <p className="text-[10px] uppercase tracking-[0.2em] text-amber-500 font-semibold">
+            <p className="text-xs uppercase tracking-[0.2em] text-amber-500 font-semibold">
               Boshqa postlar
             </p>
             <div className="mt-4 space-y-3">
@@ -149,12 +144,11 @@ export default function BlogDetail() {
                   to={`/blog/${item.slug}`}
                   className="block rounded-2xl border border-border p-4 no-underline transition-colors duration-200 hover:border-amber-500"
                 >
-                  <p className="text-[10px] uppercase tracking-[0.16em] opacity-50">
+                  <p className="text-xs uppercase tracking-[0.16em] opacity-50">
                     {item.tag}
                   </p>
                   <h3
-                    className="mt-2 text-lg font-semibold leading-snug"
-                    style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                    className="mt-2 text-lg font-semibold leading-snug font-display"
                   >
                     {item.title}
                   </h3>

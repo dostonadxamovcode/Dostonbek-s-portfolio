@@ -7,16 +7,13 @@ import {
   MenubarSeparator,
   MenubarTrigger,
 } from "@/components/ui/menubar";
-import { useTheme } from "../components/theme-provider";
-import { CgDarkMode } from "react-icons/cg";
+import { ModeToggle } from "../components/mode-toggle";
 import { FcAbout, FcHome } from "react-icons/fc";
 import { GoProjectSymlink } from "react-icons/go";
 import { MdOutlineContacts } from "react-icons/md";
 import { FaRegNewspaper } from "react-icons/fa";
 
 export default function MainLoyauts() {
-  const { theme, setTheme } = useTheme();
-
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden">
       <header className="sticky top-3 sm:top-4 z-50 w-full backdrop-blur-md">
@@ -24,11 +21,10 @@ export default function MainLoyauts() {
           <nav className=" grid grid-cols-2 md:grid-cols-3 items-center h-14 sm:h-16">
 
             {/* Left */}
-            <div data-aos="fade-right" className="flex items-center">
+            <div className="flex items-center">
               <Link to="/" className="flex-shrink-0 no-underline">
                 <span
-                  className="text-lg sm:text-xl font-bold tracking-tight"
-                  style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                  className="text-lg sm:text-xl font-bold tracking-tight font-display"
                 >
                   Dostonbek
                   <span className="inline-block w-1.5 h-1.5 sm:w-1.75 sm:h-1.75 bg-amber-500 rounded-full ml-1 relative -top-0.5"></span>
@@ -37,7 +33,7 @@ export default function MainLoyauts() {
             </div>
 
             {/* Center */}
-            <div data-aos="flip-up" className="hidden md:flex justify-center">
+            <div className="hidden md:flex justify-center">
               <div className="flex items-center gap-1">
                 {[
                   { to: "/", label: "Home" },
@@ -72,13 +68,8 @@ export default function MainLoyauts() {
             </div>
 
             {/* Right */}
-            <div data-aos="fade-left" className="flex items-center justify-end gap-2">
-              <button
-                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                className="shrink-0"
-              >
-                <CgDarkMode size={24} />
-              </button>
+            <div className="flex items-center justify-end gap-2">
+              <ModeToggle />
 
               <div className="md:hidden">
                 <Menubar className="border rounded-lg">

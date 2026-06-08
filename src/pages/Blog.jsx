@@ -41,13 +41,12 @@ export default function Blog() {
       <div ref={headerRef} className="space-y-2">
         <div className="flex items-center gap-2">
           <span className="inline-block w-5 h-[2px] bg-amber-500"></span>
-          <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-amber-500">
+          <span className="text-xs font-semibold tracking-[0.15em] uppercase text-amber-500">
             Blog
           </span>
         </div>
         <h1
-          className="text-3xl sm:text-4xl font-bold tracking-tight"
-          style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          className="text-3xl sm:text-4xl font-bold tracking-tight font-display"
         >
           Fikrlar, tajriba va foydali yozuvlar
         </h1>
@@ -59,42 +58,31 @@ export default function Blog() {
 
       <div
         ref={introRef}
-        className="grid gap-4 md:grid-cols-3 border-y border-border py-6"
+        className="flex flex-wrap items-center gap-2 border-y border-border py-6"
       >
-        <div className="rounded-2xl border border-border p-5 bg-card/50">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-amber-500 font-semibold">
-            Vazifasi
-          </p>
-          <p className="text-sm leading-relaxed opacity-80 mt-3">
-            Blog sahifasi sizning bilim, tajriba va qarashlaringizni maqola
-            ko'rinishida ko'rsatadi.
-          </p>
-        </div>
-        <div className="rounded-2xl border border-border p-5 bg-card/50">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-amber-500 font-semibold">
-            Kim uchun
-          </p>
-          <p className="text-sm leading-relaxed opacity-80 mt-3">
-            Potensial mijozlar, recruiterlar va sizning ish uslubingizni bilmoqchi
-            bo'lgan odamlar uchun.
-          </p>
-        </div>
-        <div className="rounded-2xl border border-border p-5 bg-card/50">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-amber-500 font-semibold">
-            Natija
-          </p>
-          <p className="text-sm leading-relaxed opacity-80 mt-3">
-            Sayt ko'proq ishonch uyg'otadi va portfolio oddiy vitrinadan kuchli
-            shaxsiy brend maydoniga aylanadi.
-          </p>
-        </div>
+        <span className="text-xs uppercase tracking-widest opacity-40 mr-1">
+          Topics
+        </span>
+        {[...new Set(blogPosts.map((post) => post.tag))].map((tag) => (
+          <span
+            key={tag}
+            className="text-xs px-3 py-1 rounded-full border border-border opacity-70"
+          >
+            {tag}
+          </span>
+        ))}
       </div>
 
       <div ref={listRef} className="space-y-4">
         <div className="space-y-1">
-          <h2 className="text-xl sm:text-2xl font-semibold">So'nggi postlar</h2>
+          <h2
+            className="text-xl sm:text-2xl font-semibold font-display"
+          >
+            So'nggi postlar
+          </h2>
           <p className="text-sm opacity-60">
-            Hozircha namunaviy maqolalar qo'shildi. Keyin real postlar bilan almashtiriladi.
+            Frontend amaliyoti, dizayn qarorlari va real loyihalarda qo'lga
+            kiritilgan tajribalar haqida qisqa yozuvlar.
           </p>
         </div>
 
@@ -105,13 +93,12 @@ export default function Blog() {
               to={`/blog/${post.slug}`}
               className="group flex h-full flex-col rounded-2xl border border-border p-5 transition-all duration-200 hover:-translate-y-1 hover:border-amber-500 hover:shadow-lg no-underline"
             >
-              <div className="flex items-center justify-between gap-3 text-[10px] uppercase tracking-[0.16em] opacity-50">
+              <div className="flex items-center justify-between gap-3 text-xs uppercase tracking-[0.16em] opacity-50">
                 <span>{post.tag}</span>
                 <span>{post.date}</span>
               </div>
               <h3
-                className="mt-4 text-lg font-semibold leading-snug group-hover:text-amber-500 transition-colors duration-200"
-                style={{ fontFamily: "'Cormorant Garamond', serif" }}
+                className="mt-4 text-lg font-semibold leading-snug group-hover:text-amber-500 transition-colors duration-200 font-display"
               >
                 {post.title}
               </h3>

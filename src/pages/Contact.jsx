@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const EMAILJS_SERVICE_ID = "service_az2wx1h";
-const EMAILJS_TEMPLATE_ID = "template_64rop9a";
-const EMAILJS_PUBLIC_KEY = "FB10NnpCU1ntzPuIC";
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 function useScrollReveal(delay = 0) {
   const ref = useRef(null);
@@ -56,7 +56,6 @@ export default function Contact() {
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus("loading");
-     console.log("Form data:", form);
     try {
       await emailjs.send(
         EMAILJS_SERVICE_ID,
@@ -84,13 +83,12 @@ export default function Contact() {
       <div ref={headerRef} className="space-y-1">
         <div className="flex items-center gap-2">
           <span className="inline-block w-5 h-[2px] bg-amber-500"></span>
-          <span className="text-[10px] font-semibold tracking-[0.15em] uppercase text-amber-500">
+          <span className="text-xs font-semibold tracking-[0.15em] uppercase text-amber-500">
             Contact
           </span>
         </div>
         <h1
-          className="text-3xl sm:text-4xl font-bold tracking-tight"
-          style={{ fontFamily: "'Cormorant Garamond', serif" }}
+          className="text-3xl sm:text-4xl font-bold tracking-tight font-display"
         >
           Get in Touch
         </h1>
@@ -109,7 +107,7 @@ export default function Contact() {
           <div className="space-y-3">
             <div className="flex gap-3">
               <div className="flex-1 space-y-1">
-                <label className="text-[10px] uppercase tracking-widest opacity-40">Name</label>
+                <label className="text-xs uppercase tracking-widest opacity-40">Name</label>
                 <input
                   name="name"
                   value={form.name}
@@ -119,7 +117,7 @@ export default function Contact() {
                 />
               </div>
               <div className="flex-1 space-y-1">
-                <label className="text-[10px] uppercase tracking-widest opacity-40">Email</label>
+                <label className="text-xs uppercase tracking-widest opacity-40">Email</label>
                 <input
                   name="email"
                   value={form.email}
@@ -131,7 +129,7 @@ export default function Contact() {
             </div>
 
             <div className="space-y-1">
-              <label className="text-[10px] uppercase tracking-widest opacity-40">Message</label>
+              <label className="text-xs uppercase tracking-widest opacity-40">Message</label>
               <textarea
                 name="message"
                 value={form.message}
