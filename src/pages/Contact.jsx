@@ -82,7 +82,7 @@ export default function Contact() {
   return (
     <div className="max-w-2xl mx-auto py-10 sm:py-16 space-y-10">
       <title>Contact Doston Adxamov | Adxamovv — Get in Touch</title>
-      <meta name="description" content="Get in touch with Doston Adxamov (Adxamovv), Full Stack Developer. Available for freelance projects, collaborations and new opportunities." />
+      <meta name="description" content="Get in touch with Doston Adxamov (Adxamovv), Frontend Developer. Available for freelance projects, collaborations and new opportunities." />
       <meta property="og:title" content="Contact Doston Adxamov | Adxamovv" />
       <meta property="og:url" content="https://adxamovv.uz/contact" />
       <link rel="canonical" href="https://adxamovv.uz/contact" />

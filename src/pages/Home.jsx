@@ -34,9 +34,9 @@ export default function Home() {
 
   return (
     <>
-      <title>Doston Adxamov | Adxamovv — Full Stack Developer</title>
-      <meta name="description" content="Doston Adxamov (Adxamovv) — Full Stack Developer from Fergana, Uzbekistan. Building fast, clean web experiences with React, JavaScript and Tailwind CSS." />
-      <meta property="og:title" content="Doston Adxamov | Adxamovv — Full Stack Developer" />
+      <title>Doston Adxamov | Adxamovv — Frontend Developer</title>
+      <meta name="description" content="Doston Adxamov (Adxamovv) — Frontend Developer from Fergana, Uzbekistan. Building fast, clean web experiences with React, JavaScript and Tailwind CSS." />
+      <meta property="og:title" content="Doston Adxamov | Adxamovv — Frontend Developer" />
       <meta property="og:url" content="https://adxamovv.uz/" />
       <link rel="canonical" href="https://adxamovv.uz/" />
       <style>{`
@@ -91,51 +91,25 @@ export default function Home() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col xs:flex-row sm:flex-row gap-3 pt-1 w-full sm:w-auto">
+          <div className="flex flex-row flex-nowrap gap-3 pt-1 overflow-x-auto pb-0.5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             <Link
               to="/projects"
-              className="
-                w-full sm:w-auto text-center
-                px-4 py-2.5 sm:px-6 sm:py-3
-                bg-foreground text-background
-                rounded-lg hover:opacity-80
-                active:scale-95
-                transition-all duration-200
-                font-medium text-sm tracking-wide
-                shadow-sm hover:shadow-md
-              "
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap px-5 py-2.5 bg-foreground text-background rounded-lg font-medium text-sm tracking-wide shadow-sm hover:opacity-80 hover:shadow-md active:scale-95 transition-all duration-200"
             >
               {t("home.viewProjects")} →
             </Link>
             <Link
               to="/contact"
-              className="
-                w-full sm:w-auto text-center
-                px-4 py-2.5 sm:px-6 sm:py-3
-                border-2 border-foreground
-                rounded-lg hover:bg-foreground hover:text-background
-                active:scale-95
-                transition-all duration-200
-                font-medium text-sm tracking-wide
-              "
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap px-5 py-2.5 border-2 border-foreground rounded-lg font-medium text-sm tracking-wide hover:bg-foreground hover:text-background active:scale-95 transition-all duration-200"
             >
               {t("home.contactMe")}
             </Link>
             <a
               href="/Dostonbek_Adxamov_Resume.pdf"
               download
-              className="
-                w-full sm:w-auto text-center inline-flex items-center justify-center gap-2
-                px-4 py-2.5 sm:px-6 sm:py-3
-                border border-border
-                rounded-lg hover:border-amber-500 hover:text-amber-500
-                active:scale-95
-                transition-all duration-200
-                font-medium text-sm tracking-wide
-                no-underline
-              "
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap px-5 py-2.5 border-2 border-border rounded-lg font-medium text-sm tracking-wide hover:border-amber-500 hover:text-amber-500 active:scale-95 transition-all duration-200 no-underline"
             >
-              <span>↓</span>
+              <span aria-hidden="true">↓</span>
               {t("home.downloadCV")}
             </a>
           </div>
@@ -167,7 +141,7 @@ export default function Home() {
             ></div>
             <img
               src={photo}
-              alt="Doston Adxamov — Full Stack Developer, Adxamovv"
+              alt="Doston Adxamov — Frontend Developer, Adxamovv"
               fetchpriority="high"
               className="w-full h-full object-cover rounded-full border-[3px] sm:border-4 border-background shadow-xl sm:shadow-2xl"
             />

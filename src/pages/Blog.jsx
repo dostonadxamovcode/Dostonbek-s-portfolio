@@ -43,7 +43,7 @@ export default function Blog() {
   return (
     <div className="max-w-4xl mx-auto py-10 sm:py-16 space-y-10">
       <title>Blog by Doston Adxamov | Adxamovv — Frontend, UI/UX & Career</title>
-      <meta name="description" content="Blog by Doston Adxamov (Adxamovv): practical notes on React, responsive design, and web development career tips from a Full Stack Developer in Uzbekistan." />
+      <meta name="description" content="Blog by Doston Adxamov (Adxamovv): practical notes on React, responsive design, and web development career tips from a Frontend Developer in Uzbekistan." />
       <meta property="og:title" content="Blog | Adxamovv — Doston Adxamov" />
       <meta property="og:url" content="https://adxamovv.uz/blog" />
       <link rel="canonical" href="https://adxamovv.uz/blog" />
