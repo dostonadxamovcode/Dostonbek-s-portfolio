@@ -38,6 +38,11 @@ export default function Projects() {
 
   return (
     <div className="max-w-5xl mx-auto py-10 sm:py-16 space-y-10">
+      <title>Projects by Doston Adxamov | Adxamovv Portfolio</title>
+      <meta name="description" content="Explore web development projects by Doston Adxamov (Adxamovv): EduManage, Healthy Food and more. Built with React, Node.js, and Tailwind CSS." />
+      <meta property="og:title" content="Projects by Doston Adxamov | Adxamovv" />
+      <meta property="og:url" content="https://adxamovv.uz/projects" />
+      <link rel="canonical" href="https://adxamovv.uz/projects" />
       <div ref={headerRef} className="space-y-2 max-w-2xl">
         <div className="flex items-center gap-2">
           <span className="inline-block w-5 h-[2px] bg-amber-500"></span>

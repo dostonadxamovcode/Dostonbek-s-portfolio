@@ -90,6 +90,11 @@ export default function About() {
 
   return (
     <div className="max-w-6xl mx-auto py-10 sm:py-16">
+      <title>About Doston Adxamov | Adxamovv — Full Stack Developer from Uzbekistan</title>
+      <meta name="description" content="Learn about Doston Adxamov (Adxamovv), a Full Stack Developer from Fergana, Uzbekistan. Skills in React, JavaScript, Node.js, Tailwind CSS, and more." />
+      <meta property="og:title" content="About Doston Adxamov | Adxamovv" />
+      <meta property="og:url" content="https://adxamovv.uz/about" />
+      <link rel="canonical" href="https://adxamovv.uz/about" />
       <div className="xl:grid xl:grid-cols-[300px_1fr] xl:gap-16">
 
         {/* ── Left: profile panel (sticky on desktop) ── */}
@@ -97,7 +102,8 @@ export default function About() {
           <div className="flex items-center gap-4 xl:flex-col xl:items-start xl:gap-5">
             <img
               src="/person.jpg"
-              alt="Dostonbek"
+              alt="Doston Adxamov — Full Stack Developer"
+              loading="lazy"
               className="w-16 h-16 xl:w-28 xl:h-28 rounded-2xl object-cover border border-border"
             />
             <div className="space-y-1">

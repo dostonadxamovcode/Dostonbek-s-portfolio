@@ -34,6 +34,11 @@ export default function Home() {
 
   return (
     <>
+      <title>Doston Adxamov | Adxamovv — Full Stack Developer</title>
+      <meta name="description" content="Doston Adxamov (Adxamovv) — Full Stack Developer from Fergana, Uzbekistan. Building fast, clean web experiences with React, JavaScript and Tailwind CSS." />
+      <meta property="og:title" content="Doston Adxamov | Adxamovv — Full Stack Developer" />
+      <meta property="og:url" content="https://adxamovv.uz/" />
+      <link rel="canonical" href="https://adxamovv.uz/" />
       <style>{`
         .reveal-left {
           opacity: 0;
@@ -162,7 +167,8 @@ export default function Home() {
             ></div>
             <img
               src={photo}
-              alt="Dostonbek"
+              alt="Doston Adxamov — Full Stack Developer, Adxamovv"
+              fetchpriority="high"
               className="w-full h-full object-cover rounded-full border-[3px] sm:border-4 border-background shadow-xl sm:shadow-2xl"
             />
           </div>

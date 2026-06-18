@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adxamovv.uz/sitemap.xml

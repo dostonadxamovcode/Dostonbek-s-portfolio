@@ -45,6 +45,8 @@ export default function BlogDetail() {
   if (!post) {
     return (
       <div className="max-w-3xl mx-auto py-16 sm:py-20 text-center space-y-5">
+        <title>Post Not Found | Adxamovv Blog</title>
+        <meta name="robots" content="noindex" />
         <p className="text-xs uppercase tracking-[0.2em] text-amber-500 font-semibold">
           {t("blogDetail.notFoundTag")}
         </p>
@@ -72,8 +74,20 @@ export default function BlogDetail() {
     .map((item) => translatePost(t, item));
   const takeaway = post.sections[post.sections.length - 1]?.paragraphs[0];
 
+  const postUrl = `https://adxamovv.uz/blog/${post.slug}`;
+
   return (
     <div className="max-w-5xl mx-auto py-10 sm:py-16 space-y-10">
+      <title>{post.title} | Adxamovv Blog — Doston Adxamov</title>
+      <meta name="description" content={post.description} />
+      <meta property="og:title" content={`${post.title} | Adxamovv Blog`} />
+      <meta property="og:description" content={post.description} />
+      <meta property="og:url" content={postUrl} />
+      <meta property="og:type" content="article" />
+      <meta property="article:author" content="Doston Adxamov" />
+      <meta name="twitter:title" content={`${post.title} | Adxamovv Blog`} />
+      <meta name="twitter:description" content={post.description} />
+      <link rel="canonical" href={postUrl} />
       <section
         ref={heroRef}
         className="relative overflow-hidden rounded-[2rem] border border-border px-6 py-8 sm:px-10 sm:py-12"

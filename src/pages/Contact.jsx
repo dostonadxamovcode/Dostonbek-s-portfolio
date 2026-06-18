@@ -81,6 +81,11 @@ export default function Contact() {
 
   return (
     <div className="max-w-2xl mx-auto py-10 sm:py-16 space-y-10">
+      <title>Contact Doston Adxamov | Adxamovv — Get in Touch</title>
+      <meta name="description" content="Get in touch with Doston Adxamov (Adxamovv), Full Stack Developer. Available for freelance projects, collaborations and new opportunities." />
+      <meta property="og:title" content="Contact Doston Adxamov | Adxamovv" />
+      <meta property="og:url" content="https://adxamovv.uz/contact" />
+      <link rel="canonical" href="https://adxamovv.uz/contact" />
 
       <div ref={headerRef} className="space-y-1">
         <div className="flex items-center gap-2">
@@ -115,7 +120,7 @@ export default function Contact() {
                   value={form.name}
                   onChange={handleChange}
                   placeholder={t("contact.namePlaceholder")}
-                  className="w-full bg-transparent border border-border rounded-lg px-3 py-2 text-sm outline-none focus:border-amber-500 transition-colors duration-200 placeholder:opacity-30"
+                  className="w-full bg-transparent border border-border rounded-lg px-3 py-2 text-sm outline-none focus:border-amber-500 transition-colors duration-200 placeholder:text-black dark:placeholder:text-white"
                 />
               </div>
               <div className="flex-1 space-y-1">
@@ -125,7 +130,7 @@ export default function Contact() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder={t("contact.emailPlaceholder")}
-                  className="w-full bg-transparent border border-border rounded-lg px-3 py-2 text-sm outline-none focus:border-amber-500 transition-colors duration-200 placeholder:opacity-30"
+                  className="w-full bg-transparent border border-border rounded-lg px-3 py-2 text-sm outline-none focus:border-amber-500 transition-colors duration-200 placeholder:text-black dark:placeholder:text-white"
                 />
               </div>
             </div>
@@ -138,7 +143,7 @@ export default function Contact() {
                 onChange={handleChange}
                 placeholder={t("contact.messagePlaceholder")}
                 rows={5}
-                className="w-full bg-transparent border border-border rounded-lg px-3 py-2 text-sm outline-none focus:border-amber-500 transition-colors duration-200 placeholder:opacity-30 resize-none"
+                className="w-full bg-transparent border border-border rounded-lg px-3 py-2 text-sm outline-none focus:border-amber-500 transition-colors duration-200 placeholder:text-black dark:placeholder:text-white resize-none"
               />
             </div>
 
