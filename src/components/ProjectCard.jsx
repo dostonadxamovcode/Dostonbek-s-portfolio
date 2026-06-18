@@ -54,7 +54,7 @@ export default function ProjectCard({ project, featured = false }) {
   );
 
   const details = (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 flex-1">
       <div className="space-y-1">
         <div className="flex items-center gap-2 flex-wrap">
           <h3
@@ -80,7 +80,7 @@ export default function ProjectCard({ project, featured = false }) {
         ))}
       </div>
 
-      <div className="pt-2">
+      <div className="pt-2 mt-auto">
         <VisitButton url={url} />
       </div>
     </div>
