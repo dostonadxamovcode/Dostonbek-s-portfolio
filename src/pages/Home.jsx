@@ -91,7 +91,7 @@ export default function Home() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row flex-wrap gap-3 pt-1">
+          <div className="flex flex-col sm:flex-row sm:flex-nowrap gap-3 pt-1">
             <Link
               to="/projects"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap px-5 py-2.5 bg-foreground text-background rounded-lg font-medium text-sm tracking-wide shadow-sm hover:opacity-80 hover:shadow-md active:scale-95 transition-all duration-200"
