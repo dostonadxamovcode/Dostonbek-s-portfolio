@@ -1,4 +1,5 @@
-import { Link, Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   Menubar,
@@ -17,6 +18,13 @@ import { FaRegNewspaper } from "react-icons/fa";
 
 export default function MainLoyauts() {
   const { t } = useTranslation();
+  const location = useLocation();
+  const [menuValue, setMenuValue] = useState("");
+
+  // Close mobile menu on every route change
+  useEffect(() => {
+    setMenuValue("");
+  }, [location.pathname]);
 
   const navItems = [
     { to: "/", label: t("nav.home") },
@@ -86,8 +94,8 @@ export default function MainLoyauts() {
               <ModeToggle />
 
               <div className="md:hidden">
-                <Menubar className="border rounded-lg">
-                  <MenubarMenu>
+                <Menubar value={menuValue} onValueChange={setMenuValue} className="border rounded-lg">
+                  <MenubarMenu value="nav">
                     <MenubarTrigger className="text-xs sm:text-sm px-2.5 sm:px-3 py-1.5 sm:py-2 font-medium flex items-center gap-1.5">
                       <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                         <rect y="2" width="16" height="1.5" rx="1" fill="currentColor" />
