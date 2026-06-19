@@ -40,16 +40,16 @@ export default function ProjectCard({ project, featured = false }) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group/media block overflow-hidden rounded-xl border border-border"
+      className="group/media block overflow-hidden rounded-xl border border-border bg-card"
     >
-      <div className={featured ? "aspect-[16/10]" : "aspect-[16/10]"}>
+      <div className="aspect-[16/10]">
         <img
           src={image}
           alt={`${title} — preview`}
           loading="lazy"
           width={1280}
           height={800}
-          className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover/media:scale-[1.03]"
+          className="h-full w-full object-cover object-top [backface-visibility:hidden] [transform:translateZ(0)] transition-transform duration-500 ease-out group-hover/media:scale-[1.02]"
         />
       </div>
     </a>
