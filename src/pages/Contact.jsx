@@ -38,7 +38,8 @@ function useScrollReveal(delay = 0) {
 const socials = [
   { label: "GitHub", url: "https://github.com/dostonadxamovcode" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/doston-adxamov-47709a320/?trk=launchpad_feed" },
-  { label: "Telegram", url: "https://t.me/uzco_der" },
+  { label: "Telegram Offical", url: "https://t.me/uzcoder_offical" },
+  { label: "Telegram", url: "https://t.me/UzCoder018" },
   { label: "Email", url: "mailto:doston.adxamov.code@gmail.com" },
 ];
 
