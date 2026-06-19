@@ -11,10 +11,7 @@ import {
 } from "@/components/ui/menubar";
 import { ModeToggle } from "../components/mode-toggle";
 import { LanguageSwitcher } from "../components/language-switcher";
-import { FcAbout, FcHome } from "react-icons/fc";
-import { GoProjectSymlink } from "react-icons/go";
-import { MdOutlineContacts } from "react-icons/md";
-import { FaRegNewspaper } from "react-icons/fa";
+import { Home, User, Layers, BookOpen, Mail } from "lucide-react";
 
 export default function MainLoyauts() {
   const { t } = useTranslation();
@@ -43,10 +40,10 @@ export default function MainLoyauts() {
   ];
 
   const menuItems = [
-    { to: "/", label: t("nav.home"), icon: <FcHome /> },
-    { to: "/about", label: t("nav.about"), icon: <FcAbout /> },
-    { to: "/projects", label: t("nav.projects"), icon: <GoProjectSymlink /> },
-    { to: "/blog", label: t("nav.blog"), icon: <FaRegNewspaper /> },
+    { to: "/", label: t("nav.home"), icon: <Home size={15} /> },
+    { to: "/about", label: t("nav.about"), icon: <User size={15} /> },
+    { to: "/projects", label: t("nav.projects"), icon: <Layers size={15} /> },
+    { to: "/blog", label: t("nav.blog"), icon: <BookOpen size={15} /> },
   ];
 
   return (
@@ -123,7 +120,7 @@ export default function MainLoyauts() {
                             to={item.to}
                             className="w-full flex items-center gap-2.5 px-1 py-1.5 font-medium text-sm no-underline"
                           >
-                            <span className="text-base">{item.icon}</span>
+                            {item.icon}
                             {item.label}
                           </Link>
                         </MenubarItem>
@@ -136,7 +133,7 @@ export default function MainLoyauts() {
                           to="/contact"
                           className="w-full flex items-center gap-2.5 px-1 py-1.5 font-medium text-sm no-underline"
                         >
-                          <span className="text-base"><MdOutlineContacts /></span>
+                          <Mail size={15} />
                           {t("nav.contact")}
                         </Link>
                       </MenubarItem>
