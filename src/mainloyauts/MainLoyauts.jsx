@@ -21,10 +21,18 @@ export default function MainLoyauts() {
   const location = useLocation();
   const [menuValue, setMenuValue] = useState("");
 
-  // Close mobile menu on every route change
+  // Close on route change
   useEffect(() => {
     setMenuValue("");
   }, [location.pathname]);
+
+  // Close on scroll or outside touch
+  useEffect(() => {
+    if (!menuValue) return;
+    const close = () => setMenuValue("");
+    window.addEventListener("scroll", close, { passive: true });
+    return () => window.removeEventListener("scroll", close);
+  }, [menuValue]);
 
   const navItems = [
     { to: "/", label: t("nav.home") },
