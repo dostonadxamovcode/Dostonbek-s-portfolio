@@ -11,7 +11,7 @@ export default {
   home: {
     eyebrow: "Frontend Developer",
     greeting: "Hi, I'm",
-    name: "Dostonbek",
+    name: "Doston Adxamov (Uzcoder)",
     description:
       "Crafting seamless digital experiences with modern web technologies. Clean code. Thoughtful design. Real results.",
     viewProjects: "View My Projects",
@@ -25,7 +25,7 @@ export default {
 
   about: {
     eyebrow: "About Me",
-    name: "Dostonbek",
+    name: "Doston Adxamov",
     basedIn: "Based in",
     basedInValue: "Fergana, Uzbekistan",
     focus: "Focus",
@@ -35,7 +35,7 @@ export default {
     getInTouch: "Get in touch",
     bioLabel: "Bio",
     bioText:
-      "I'm a frontend developer passionate about building clean, fast, and accessible web experiences. I focus on writing maintainable code and thoughtful UI design. Currently open to new opportunities.",
+      "I'm Doston Adxamov — a Frontend Developer and React Developer from Fergana, Uzbekistan. Known online as Uzcoder, I build clean, fast, and accessible web experiences with React, JavaScript, and Tailwind CSS. Currently open to new opportunities.",
     techStackLabel: "Tech Stack",
     frontend: "Frontend",
     tools: "Tools",
@@ -223,6 +223,6 @@ export default {
   },
 
   footer: {
-    rights: "© 2026 Dostonbek. All rights reserved.",
+    rights: "© 2026 Doston Adxamov (Uzcoder). All rights reserved.",
   },
 };

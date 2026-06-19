@@ -38,9 +38,9 @@ export default function Projects() {
 
   return (
     <div className="max-w-5xl mx-auto py-10 sm:py-16 space-y-10">
-      <title>Projects by Doston Adxamov | Adxamovv Portfolio</title>
-      <meta name="description" content="Explore web development projects by Doston Adxamov (Adxamovv): EduManage, Healthy Food and more. Built with React, Node.js, and Tailwind CSS." />
-      <meta property="og:title" content="Projects by Doston Adxamov | Adxamovv" />
+      <title>Projects by Doston Adxamov (Uzcoder) | Frontend Developer Portfolio</title>
+      <meta name="description" content="Explore web development projects by Doston Adxamov (Uzcoder): EduManage, CEFR Mock and more. Built with React, JavaScript, and Tailwind CSS." />
+      <meta property="og:title" content="Projects — Doston Adxamov (Uzcoder) | Frontend Developer" />
       <meta property="og:url" content="https://adxamovv.uz/projects" />
       <link rel="canonical" href="https://adxamovv.uz/projects" />
       <div ref={headerRef} className="space-y-2 max-w-2xl">

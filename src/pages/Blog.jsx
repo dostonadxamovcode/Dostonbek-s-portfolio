@@ -42,9 +42,9 @@ export default function Blog() {
 
   return (
     <div className="max-w-4xl mx-auto py-10 sm:py-16 space-y-10">
-      <title>Blog by Doston Adxamov | Adxamovv — Frontend, UI/UX & Career</title>
-      <meta name="description" content="Blog by Doston Adxamov (Adxamovv): practical notes on React, responsive design, and web development career tips from a Frontend Developer in Uzbekistan." />
-      <meta property="og:title" content="Blog | Adxamovv — Doston Adxamov" />
+      <title>Blog by Doston Adxamov (Uzcoder) | Frontend Developer — adxamovv.uz</title>
+      <meta name="description" content="Blog by Doston Adxamov (Uzcoder): practical notes on React, responsive design, and web development from a Frontend Developer in Uzbekistan." />
+      <meta property="og:title" content="Blog — Doston Adxamov (Uzcoder) | Frontend Developer" />
       <meta property="og:url" content="https://adxamovv.uz/blog" />
       <link rel="canonical" href="https://adxamovv.uz/blog" />
       <div ref={headerRef} className="space-y-2">

@@ -34,9 +34,9 @@ export default function Home() {
 
   return (
     <>
-      <title>Doston Adxamov | Adxamovv — Frontend Developer</title>
-      <meta name="description" content="Doston Adxamov (Adxamovv) — Frontend Developer from Fergana, Uzbekistan. Building fast, clean web experiences with React, JavaScript and Tailwind CSS." />
-      <meta property="og:title" content="Doston Adxamov | Adxamovv — Frontend Developer" />
+      <title>Doston Adxamov (Uzcoder) | Frontend Developer | adxamovv.uz</title>
+      <meta name="description" content="Doston Adxamov, known as Uzcoder — Frontend Developer and React Developer from Fergana, Uzbekistan. Building clean web experiences with React, JavaScript and Tailwind CSS." />
+      <meta property="og:title" content="Doston Adxamov (Uzcoder) | Frontend Developer | adxamovv.uz" />
       <meta property="og:url" content="https://adxamovv.uz/" />
       <link rel="canonical" href="https://adxamovv.uz/" />
       <style>{`
@@ -141,7 +141,7 @@ export default function Home() {
             ></div>
             <img
               src={photo}
-              alt="Doston Adxamov — Frontend Developer, Adxamovv"
+              alt="Doston Adxamov (Uzcoder) — Frontend Developer from Uzbekistan"
               fetchPriority="high"
               width={1080}
               height={1080}

@@ -90,9 +90,9 @@ export default function About() {
 
   return (
     <div className="max-w-6xl mx-auto py-10 sm:py-16">
-      <title>About Doston Adxamov | Adxamovv — Frontend Developer from Uzbekistan</title>
-      <meta name="description" content="Learn about Doston Adxamov (Adxamovv), a Frontend Developer from Fergana, Uzbekistan. Skills in React, JavaScript, Node.js, Tailwind CSS, and more." />
-      <meta property="og:title" content="About Doston Adxamov | Adxamovv" />
+      <title>About Doston Adxamov (Uzcoder) | Frontend Developer from Uzbekistan</title>
+      <meta name="description" content="Learn about Doston Adxamov (Uzcoder), a Frontend Developer and React Developer from Fergana, Uzbekistan. Skills in React, JavaScript, Node.js, Tailwind CSS and more." />
+      <meta property="og:title" content="About Doston Adxamov (Uzcoder) | Frontend Developer from Uzbekistan" />
       <meta property="og:url" content="https://adxamovv.uz/about" />
       <link rel="canonical" href="https://adxamovv.uz/about" />
       <div className="xl:grid xl:grid-cols-[300px_1fr] xl:gap-16">
@@ -102,7 +102,7 @@ export default function About() {
           <div className="flex items-center gap-4 xl:flex-col xl:items-start xl:gap-5">
             <img
               src="/person.jpg"
-              alt="Doston Adxamov — Frontend Developer"
+              alt="Doston Adxamov (Uzcoder) — Frontend Developer from Fergana, Uzbekistan"
               loading="lazy"
               width={831}
               height={726}
