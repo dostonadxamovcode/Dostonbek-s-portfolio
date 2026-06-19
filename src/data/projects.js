@@ -15,6 +15,15 @@ export const projects = [
     tech: ["React", "Tailwind CSS"],
     url: "https://healty-psi.vercel.app/",
     image: "/healthy-food-shot.jpg",
+    date: "may 2025",
+  },
+  {
+    slug: "Cefr mock test",
+    title: "Cefr",
+    i18nKey: "Cefrmock",
+    tech: ["React", "Tailwind CSS","Firebase database"],
+    url: "https://www.olimovmax.uz/",
+    image: "/imagecopy.png",
     date: "Jan 2026",
   },
 ];

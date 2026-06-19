@@ -131,6 +131,12 @@
       linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
       linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
     background-size: 100% 100%, 40px 40px, 40px 40px;
-    background-attachment: fixed;
+  }
+  /* background-attachment: fixed disables GPU compositing on mobile/iOS;
+     limit it to large screens where it is supported without repaints */
+  @media (min-width: 1024px) {
+    body {
+      background-attachment: fixed;
+    }
   }
 }

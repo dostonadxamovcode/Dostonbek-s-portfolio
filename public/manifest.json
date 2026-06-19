@@ -1,0 +1,24 @@
+{
+  "name": "Doston Adxamov | Adxamovv",
+  "short_name": "Adxamovv",
+  "description": "Frontend Developer from Fergana, Uzbekistan — React, JavaScript, Tailwind CSS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/person.jpg",
+      "sizes": "831x726",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

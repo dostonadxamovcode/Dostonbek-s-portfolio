@@ -104,6 +104,8 @@ export default function About() {
               src="/person.jpg"
               alt="Doston Adxamov — Frontend Developer"
               loading="lazy"
+              width={831}
+              height={726}
               className="w-16 h-16 xl:w-28 xl:h-28 rounded-2xl object-cover border border-border"
             />
             <div className="space-y-1">

@@ -143,6 +143,8 @@ export default function Home() {
               src={photo}
               alt="Doston Adxamov — Frontend Developer, Adxamovv"
               fetchPriority="high"
+              width={1080}
+              height={1080}
               className="w-full h-full object-cover rounded-full border-[3px] sm:border-4 border-background shadow-xl sm:shadow-2xl"
             />
           </div>

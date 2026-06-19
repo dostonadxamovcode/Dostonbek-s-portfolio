@@ -47,6 +47,8 @@ export default function ProjectCard({ project, featured = false }) {
           src={image}
           alt={`${title} — preview`}
           loading="lazy"
+          width={1280}
+          height={800}
           className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover/media:scale-[1.03]"
         />
       </div>
