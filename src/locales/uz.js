@@ -81,6 +81,13 @@ export default {
       achievement:
         "Loyihani Figma maketidan ikki haftadan kamroq vaqtda to'liq moslashuvchan, ishga tushirilgan mahsulotga aylantirdim.",
     },
+    Cefrmock: {
+      subtitle: "CEFR darajali ingliz tili mock test platformasi",
+      pitch:
+        "O'quvchilarga CEFR darajali ingliz tili imtihonlariga realistik amaliy testlar, tezkor baholash va natijalarni kuzatish orqali tayyorlanishga yordam beradigan platforma.",
+      achievement:
+        "Firebase orqali real vaqtdagi ma'lumotlar, autentifikatsiya va foydalanuvchi natijalarini saqlashni joriy qildim — to'liq funksional imtihon simulyatorini yaratdim.",
+    },
   },
 
   blog: {

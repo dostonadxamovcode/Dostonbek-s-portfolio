@@ -81,6 +81,13 @@ export default {
       achievement:
         "Took the project from Figma layout to a deployed, fully responsive product in under two weeks.",
     },
+    Cefrmock: {
+      subtitle: "English proficiency mock test platform",
+      pitch:
+        "A platform that helps learners prepare for CEFR-level English exams with realistic practice tests, instant scoring and progress tracking — all in one place.",
+      achievement:
+        "Integrated Firebase for real-time data storage, user authentication and progress tracking, delivering a fully functional exam simulator.",
+    },
   },
 
   blog: {
