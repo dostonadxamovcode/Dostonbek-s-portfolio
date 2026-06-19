@@ -176,7 +176,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <ProjectCard project={projects[0]} featured />
+        <ProjectCard project={projects[projects.length - 1]} featured />
       </section>
     </>
   );
