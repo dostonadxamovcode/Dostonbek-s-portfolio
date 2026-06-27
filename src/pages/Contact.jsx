@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
+import SEO from "../components/SEO";
 
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -38,7 +39,7 @@ function useScrollReveal(delay = 0) {
 const socials = [
   { label: "GitHub", url: "https://github.com/dostonadxamovcode" },
   { label: "LinkedIn", url: "https://www.linkedin.com/in/doston-adxamov-47709a320/?trk=launchpad_feed" },
-  { label: "Telegram Offical", url: "https://t.me/uzcoder_offical" },
+  { label: "Telegram Official", url: "https://t.me/uzcoder_offical" },
   { label: "Telegram", url: "https://t.me/UzCoder018" },
   { label: "Email", url: "mailto:doston.adxamov.code@gmail.com" },
 ];
@@ -82,11 +83,11 @@ export default function Contact() {
 
   return (
     <div className="max-w-2xl mx-auto py-10 sm:py-16 space-y-10">
-      <title>Contact Doston Adxamov (Uzcoder) | Frontend Developer — adxamovv.uz</title>
-      <meta name="description" content="Get in touch with Doston Adxamov (Uzcoder), Frontend Developer and React Developer from Uzbekistan. Available for freelance projects and new opportunities." />
-      <meta property="og:title" content="Contact — Doston Adxamov (Uzcoder) | Frontend Developer" />
-      <meta property="og:url" content="https://adxamovv.uz/contact" />
-      <link rel="canonical" href="https://adxamovv.uz/contact" />
+      <SEO
+        title="Contact Adxamovv | IT Courses & Online Learning Support"
+        description="Contact Adxamovv for programming courses, English learning, quizzes, IT education tools, collaborations, and support."
+        path="/contact"
+      />
 
       <div ref={headerRef} className="space-y-1">
         <div className="flex items-center gap-2">

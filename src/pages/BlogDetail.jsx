@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { blogPosts, translatePost } from "../data/blogPosts";
+import SEO from "../components/SEO";
 
 function useScrollReveal(delay = 0) {
   const ref = useRef(null);
@@ -45,8 +46,12 @@ export default function BlogDetail() {
   if (!post) {
     return (
       <div className="max-w-3xl mx-auto py-16 sm:py-20 text-center space-y-5">
-        <title>Post Not Found | Adxamovv Blog</title>
-        <meta name="robots" content="noindex" />
+        <SEO
+          title="Post Not Found | Adxamovv Blog"
+          description="This Adxamovv blog post could not be found."
+          path={`/blog/${slug || ""}`}
+          robots="noindex, follow"
+        />
         <p className="text-xs uppercase tracking-[0.2em] text-amber-500 font-semibold">
           {t("blogDetail.notFoundTag")}
         </p>
@@ -78,16 +83,40 @@ export default function BlogDetail() {
 
   return (
     <div className="max-w-5xl mx-auto py-10 sm:py-16 space-y-10">
-      <title>{post.title} | Adxamovv Blog — Doston Adxamov</title>
-      <meta name="description" content={post.description} />
-      <meta property="og:title" content={`${post.title} | Adxamovv Blog`} />
-      <meta property="og:description" content={post.description} />
-      <meta property="og:url" content={postUrl} />
-      <meta property="og:type" content="article" />
-      <meta property="article:author" content="Doston Adxamov" />
-      <meta name="twitter:title" content={`${post.title} | Adxamovv Blog`} />
-      <meta name="twitter:description" content={post.description} />
-      <link rel="canonical" href={postUrl} />
+      <SEO
+        title={`${post.title} | Adxamovv Blog`}
+        description={post.description}
+        path={`/blog/${post.slug}`}
+        type="article"
+        structuredData={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title,
+            description: post.description,
+            url: postUrl,
+            datePublished: rawPost.dateIso,
+            dateModified: rawPost.dateIso,
+            author: {
+              "@type": "Person",
+              name: "Doston Adxamov",
+              url: "https://adxamovv.uz",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Adxamovv",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://adxamovv.uz/image2.jpg",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": postUrl,
+            },
+          },
+        ]}
+      />
       <section
         ref={heroRef}
         className="relative overflow-hidden rounded-[2rem] border border-border px-6 py-8 sm:px-10 sm:py-12"

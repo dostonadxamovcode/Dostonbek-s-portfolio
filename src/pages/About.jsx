@@ -1,6 +1,7 @@
-import { useEffect, useRef } from "react";
+import { createElement, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import SEO from "../components/SEO";
 import {
   FaReact,
   FaHtml5,
@@ -90,11 +91,11 @@ export default function About() {
 
   return (
     <div className="max-w-6xl mx-auto py-10 sm:py-16">
-      <title>About Doston Adxamov (Uzcoder) | Frontend Developer from Uzbekistan</title>
-      <meta name="description" content="Learn about Doston Adxamov (Uzcoder), a Frontend Developer and React Developer from Fergana, Uzbekistan. Skills in React, JavaScript, Node.js, Tailwind CSS and more." />
-      <meta property="og:title" content="About Doston Adxamov (Uzcoder) | Frontend Developer from Uzbekistan" />
-      <meta property="og:url" content="https://adxamovv.uz/about" />
-      <link rel="canonical" href="https://adxamovv.uz/about" />
+      <SEO
+        title="About Adxamovv | Online Learning, Programming & IT Education"
+        description="Learn about Adxamovv, an education brand focused on programming, English learning, quizzes, and practical IT courses by Doston Adxamov."
+        path="/about"
+      />
       <div className="xl:grid xl:grid-cols-[300px_1fr] xl:gap-16">
 
         {/* ── Left: profile panel (sticky on desktop) ── */}
@@ -104,6 +105,7 @@ export default function About() {
               src="/person.jpg"
               alt="Doston Adxamov (Uzcoder) — Frontend Developer from Fergana, Uzbekistan"
               loading="lazy"
+              decoding="async"
               width={831}
               height={726}
               className="w-16 h-16 xl:w-28 xl:h-28 rounded-2xl object-cover border border-border"
@@ -163,7 +165,7 @@ export default function About() {
                         key={name}
                         className="flex items-center gap-2.5 rounded-lg border border-border px-3 py-2 text-sm"
                       >
-                        <Icon className="text-base opacity-70 shrink-0" />
+                        {createElement(Icon, { className: "text-base opacity-70 shrink-0", "aria-hidden": true })}
                         <span className="opacity-80">{name}</span>
                       </div>
                     ))}
@@ -179,7 +181,7 @@ export default function About() {
             <div className="grid gap-3 sm:grid-cols-2">
               {learning.map(({ name, noteKey, icon: Icon }) => (
                 <div key={name} className="flex gap-3 rounded-xl border border-border p-4">
-                  <Icon className="mt-0.5 text-lg text-amber-500 shrink-0" />
+                  {createElement(Icon, { className: "mt-0.5 text-lg text-amber-500 shrink-0", "aria-hidden": true })}
                   <div className="space-y-1">
                     <p className="text-sm font-semibold">{name}</p>
                     <p className="text-xs leading-relaxed opacity-60">{t(`about.${noteKey}`)}</p>

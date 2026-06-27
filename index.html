@@ -4,151 +4,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Inline theme script: prevents dark-mode FOUC / CLS before React hydrates -->
   <script>
     (function () { try { var t = localStorage.getItem('vite-ui-theme'); var th = t || 'dark'; if (th === 'system') { th = window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'; } document.documentElement.classList.add(th); } catch (e) { } })();
   </script>
 
-  <!-- Primary Meta Tags -->
-  <title>Doston Adxamov (Uzcoder) | Frontend Developer | adxamovv.uz</title>
-  <meta name="title" content="Doston Adxamov (Uzcoder) | Frontend Developer | adxamovv.uz" />
+  <title>Adxamovv | IT Courses, Programming Tests & Online Learning</title>
+  <meta name="title" content="Adxamovv | IT Courses, Programming Tests & Online Learning" />
   <meta name="description"
-    content="Doston Adxamov, known as Uzcoder — Frontend Developer and React Developer from Fergana, Uzbekistan. Building fast, accessible web apps with React, JavaScript, Node.js and Tailwind CSS." />
+    content="Adxamovv is an online education platform for programming, English learning, quizzes, and professional IT courses." />
   <meta name="keywords"
-    content="Doston Adxamov, Dostonbek Adxamov, Adxamov Doston, Uzcoder, Uzcoder Frontend Developer, Doston Frontend Developer, adxamov, adxamovv, adxamovv.uz, Frontend Developer, Frontend Developer Uzbekistan, React Developer, React Developer Uzbekistan, JavaScript Developer, Web Developer Uzbekistan, Fergana developer" />
-  <meta name="author" content="Doston Adxamov" />
+    content="adxamovv, adxamov, adxamovv.uz, Adxamovv IT courses, programming tests, online learning, English learning, programming quizzes, professional IT courses, React courses, JavaScript courses" />
+  <meta name="author" content="Adxamovv" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="language" content="English" />
-  <meta name="revisit-after" content="7 days" />
-  <meta name="geo.region" content="UZ-FA" />
-  <meta name="geo.placename" content="Fergana, Uzbekistan" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="#050505" />
   <link rel="canonical" href="https://adxamovv.uz/" />
 
-  <!-- Favicon (RealFaviconGenerator) -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/jpeg" href="/image2.jpg" sizes="1080x1080" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Uzcoder" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="apple-mobile-web-app-title" content="Adxamovv" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="mobile-web-app-capable" content="yes" />
-  <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://adxamovv.uz/" />
-  <meta property="og:site_name" content="Doston Adxamov — Uzcoder" />
-  <meta property="og:title" content="Doston Adxamov (Uzcoder) | Frontend Developer | adxamovv.uz" />
+  <meta property="og:site_name" content="Adxamovv" />
+  <meta property="og:title" content="Adxamovv | IT Courses, Programming Tests & Online Learning" />
   <meta property="og:description"
-    content="Doston Adxamov, known as Uzcoder — Frontend Developer and React Developer from Fergana, Uzbekistan. Building fast, accessible web apps with React, JavaScript, Node.js and Tailwind CSS." />
+    content="Adxamovv is an online education platform for programming, English learning, quizzes, and professional IT courses." />
   <meta property="og:image" content="https://adxamovv.uz/image2.jpg" />
   <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:alt" content="Doston Adxamov (Uzcoder) — Frontend Developer" />
-  <meta property="og:image:width" content="831" />
-  <meta property="og:image:height" content="726" />
+  <meta property="og:image:alt" content="Adxamovv online education platform" />
+  <meta property="og:image:width" content="1080" />
+  <meta property="og:image:height" content="1080" />
   <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@uzcoder018" />
-  <meta name="twitter:creator" content="@uzcoder018" />
   <meta name="twitter:url" content="https://adxamovv.uz/" />
-  <meta name="twitter:title" content="Doston Adxamov (Uzcoder) | Frontend Developer | adxamovv.uz" />
+  <meta name="twitter:title" content="Adxamovv | IT Courses, Programming Tests & Online Learning" />
   <meta name="twitter:description"
-    content="Doston Adxamov, known as Uzcoder — Frontend Developer and React Developer from Fergana, Uzbekistan. Building fast, accessible web apps with React, JavaScript, Node.js and Tailwind CSS." />
+    content="Adxamovv is an online education platform for programming, English learning, quizzes, and professional IT courses." />
   <meta name="twitter:image" content="https://adxamovv.uz/image2.jpg" />
-  <meta name="twitter:image:alt" content="Doston Adxamov (Uzcoder) — Frontend Developer" />
+  <meta name="twitter:image:alt" content="Adxamovv online education platform" />
 
-  <!-- Structured Data: Person -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Doston Adxamov",
-    "alternateName": ["Dostonbek Adxamov", "Adxamov", "Adxamovv", "Uzcoder", "UzCoder"],
+    "@type": "Organization",
+    "name": "Adxamovv",
+    "alternateName": ["Adxamov", "adxamovv.uz", "Uzcoder"],
     "url": "https://adxamovv.uz",
-    "image": "https://adxamovv.uz/image2.jpg",
-    "jobTitle": "Frontend Developer",
-    "description": "Doston Adxamov (Uzcoder) — Frontend Developer and React Developer from Fergana, Uzbekistan. Specializes in React, JavaScript, Node.js and Tailwind CSS.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Fergana",
-      "addressCountry": "UZ"
+    "logo": "https://adxamovv.uz/image2.jpg",
+    "description": "Adxamovv is an online education platform for programming, English learning, quizzes, and professional IT courses.",
+    "founder": {
+      "@type": "Person",
+      "name": "Doston Adxamov",
+      "alternateName": ["Dostonbek Adxamov", "Uzcoder"]
     },
     "sameAs": [
       "https://github.com/dostonadxamovcode",
       "https://www.linkedin.com/in/doston-adxamov-47709a320/",
       "https://t.me/uzcoder_offical",
       "https://t.me/UzCoder018"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Adxamovv",
-      "url": "https://adxamovv.uz"
-    },
-    "knowsAbout": ["React", "JavaScript", "Node.js", "Tailwind CSS", "HTML5", "CSS3", "Git", "Vite"],
-    "knowsLanguage": ["Uzbek", "Russian", "English"]
-  }
-  </script>
-
-  <!-- Structured Data: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Adxamovv",
-    "alternateName": "Uzcoder",
-    "url": "https://adxamovv.uz",
-    "logo": "https://adxamovv.uz/favicon.svg",
-    "description": "Adxamovv — personal brand of Doston Adxamov (Uzcoder), Frontend Developer and React Developer from Uzbekistan.",
-    "founder": {
-      "@type": "Person",
-      "name": "Doston Adxamov",
-      "alternateName": "Uzcoder"
-    },
-    "sameAs": [
-      "https://github.com/dostonadxamovcode",
-      "https://t.me/uzcoder_offical"
     ]
   }
   </script>
 
-  <!-- Structured Data: WebSite -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Doston Adxamov — Uzcoder",
+    "name": "Adxamovv",
+    "alternateName": ["Adxamov", "adxamovv.uz"],
     "url": "https://adxamovv.uz",
-    "description": "Personal portfolio of Doston Adxamov (Uzcoder) — Frontend Developer from Fergana, Uzbekistan.",
-    "author": {
-      "@type": "Person",
-      "name": "Doston Adxamov",
-      "alternateName": "Uzcoder"
-    },
+    "description": "Adxamovv is an online education platform for programming, English learning, quizzes, and professional IT courses.",
     "inLanguage": "en",
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": "https://adxamovv.uz/?q={search_term_string}"
+        "urlTemplate": "https://adxamovv.uz/blog?search={search_term_string}"
       },
       "query-input": "required name=search_term_string"
     }
   }
   </script>
 
-  <!-- Performance: Preconnect for external origins -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Doston Adxamov",
+    "alternateName": ["Dostonbek Adxamov", "Adxamov", "Adxamovv", "Uzcoder"],
+    "url": "https://adxamovv.uz",
+    "image": "https://adxamovv.uz/image2.jpg",
+    "jobTitle": "Frontend Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Adxamovv",
+      "url": "https://adxamovv.uz"
+    },
+    "knowsAbout": ["Programming", "React", "JavaScript", "Node.js", "Tailwind CSS", "English learning", "Online quizzes", "IT courses"],
+    "sameAs": [
+      "https://github.com/dostonadxamovcode",
+      "https://www.linkedin.com/in/doston-adxamov-47709a320/",
+      "https://t.me/uzcoder_offical",
+      "https://t.me/UzCoder018"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="dns-prefetch" href="https://api.emailjs.com" />
-
-  <!-- LCP image preload: browser fetches hero photo before JS executes -->
   <link rel="preload" as="image" href="/image2.jpg" fetchpriority="high" />
-
-  <!-- Non-blocking font load: rel="preload" + onload swap eliminates render-blocking -->
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap"
     onload="this.rel='stylesheet'" />

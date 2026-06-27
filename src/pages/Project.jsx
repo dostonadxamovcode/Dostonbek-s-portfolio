@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
+import SEO from "../components/SEO";
 
 function useScrollReveal(delay = 0) {
   const ref = useRef(null);
@@ -38,11 +39,11 @@ export default function Projects() {
 
   return (
     <div className="max-w-5xl mx-auto py-10 sm:py-16 space-y-10">
-      <title>Projects by Doston Adxamov (Uzcoder) | Frontend Developer Portfolio</title>
-      <meta name="description" content="Explore web development projects by Doston Adxamov (Uzcoder): EduManage, CEFR Mock and more. Built with React, JavaScript, and Tailwind CSS." />
-      <meta property="og:title" content="Projects — Doston Adxamov (Uzcoder) | Frontend Developer" />
-      <meta property="og:url" content="https://adxamovv.uz/projects" />
-      <link rel="canonical" href="https://adxamovv.uz/projects" />
+      <SEO
+        title="Adxamovv Projects | Programming Tests, Quizzes & Learning Tools"
+        description="Explore Adxamovv projects for programming practice, English learning, online quizzes, and IT education tools built with modern web technologies."
+        path="/projects"
+      />
       <div ref={headerRef} className="space-y-2 max-w-2xl">
         <div className="flex items-center gap-2">
           <span className="inline-block w-5 h-[2px] bg-amber-500"></span>

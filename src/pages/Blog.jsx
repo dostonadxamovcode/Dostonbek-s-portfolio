@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { blogPosts, translatePost } from "../data/blogPosts";
+import SEO from "../components/SEO";
 
 function useScrollReveal(delay = 0) {
   const ref = useRef(null);
@@ -42,11 +43,11 @@ export default function Blog() {
 
   return (
     <div className="max-w-4xl mx-auto py-10 sm:py-16 space-y-10">
-      <title>Blog by Doston Adxamov (Uzcoder) | Frontend Developer — adxamovv.uz</title>
-      <meta name="description" content="Blog by Doston Adxamov (Uzcoder): practical notes on React, responsive design, and web development from a Frontend Developer in Uzbekistan." />
-      <meta property="og:title" content="Blog — Doston Adxamov (Uzcoder) | Frontend Developer" />
-      <meta property="og:url" content="https://adxamovv.uz/blog" />
-      <link rel="canonical" href="https://adxamovv.uz/blog" />
+      <SEO
+        title="Adxamovv Blog | Programming, English Learning & IT Courses"
+        description="Read Adxamovv articles about programming, responsive web development, learning English, quizzes, and practical IT course topics."
+        path="/blog"
+      />
       <div ref={headerRef} className="space-y-2">
         <div className="flex items-center gap-2">
           <span className="inline-block w-5 h-[2px] bg-amber-500"></span>

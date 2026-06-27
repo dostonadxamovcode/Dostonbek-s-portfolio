@@ -22,18 +22,21 @@ export const blogPosts = [
     slug: "react-loyihani-tartibli-boshlash",
     i18nKey: "reactStart",
     date: "Apr 2026",
+    dateIso: "2026-04-01",
     sectionKeys: ["sectionStart", "sectionFolders", "sectionResult"],
   },
   {
     slug: "responsive-dizayn-uchun-amaliy-yondashuv",
     i18nKey: "responsiveDesign",
     date: "Apr 2026",
+    dateIso: "2026-04-01",
     sectionKeys: ["sectionMobile", "sectionSpacing", "sectionOutcome"],
   },
   {
     slug: "portfolio-sayt-nega-kerak",
     i18nKey: "whyPortfolio",
     date: "Apr 2026",
+    dateIso: "2026-04-01",
     sectionKeys: ["sectionImpression", "sectionShowcase", "sectionLongTerm"],
   },
 ];

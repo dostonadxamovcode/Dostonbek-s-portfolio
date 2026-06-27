@@ -3,8 +3,9 @@ import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
+import SEO from "../components/SEO";
 
-function useScrollReveal(options = {}) {
+function useScrollReveal() {
   const ref = useRef(null);
   useEffect(() => {
     const el = ref.current;
@@ -16,7 +17,7 @@ function useScrollReveal(options = {}) {
           observer.unobserve(el);
         }
       },
-      { threshold: 0.15, ...options }
+      { threshold: 0.15 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -34,11 +35,11 @@ export default function Home() {
 
   return (
     <>
-      <title>Doston Adxamov (Uzcoder) | Frontend Developer | adxamovv.uz</title>
-      <meta name="description" content="Doston Adxamov, known as Uzcoder — Frontend Developer and React Developer from Fergana, Uzbekistan. Building clean web experiences with React, JavaScript and Tailwind CSS." />
-      <meta property="og:title" content="Doston Adxamov (Uzcoder) | Frontend Developer | adxamovv.uz" />
-      <meta property="og:url" content="https://adxamovv.uz/" />
-      <link rel="canonical" href="https://adxamovv.uz/" />
+      <SEO
+        title="Adxamovv | IT Courses, Programming Tests & Online Learning"
+        description="Adxamovv is an online education platform for programming, English learning, quizzes, and professional IT courses."
+        path="/"
+      />
       <style>{`
         .reveal-left {
           opacity: 0;
@@ -143,6 +144,7 @@ export default function Home() {
               src={photo}
               alt="Doston Adxamov (Uzcoder) — Frontend Developer from Uzbekistan"
               fetchPriority="high"
+              decoding="async"
               width={1080}
               height={1080}
               className="w-full h-full object-cover rounded-full border-[3px] sm:border-4 border-background shadow-xl sm:shadow-2xl"
@@ -153,7 +155,7 @@ export default function Home() {
       </div>
 
       {/* ── Featured Project ── */}
-      <section className="py-10 sm:py-14 border-t border-border space-y-6">
+      <section className="py-10 sm:py-14 mt-[100px] border-t border-border space-y-6">
         <div className="flex items-end justify-between gap-4 flex-wrap">
           <div className="space-y-1">
             <div className="flex items-center gap-2">

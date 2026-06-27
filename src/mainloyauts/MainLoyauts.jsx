@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import {
   Menubar,
@@ -15,13 +15,7 @@ import { Home, User, Layers, BookOpen, Mail } from "lucide-react";
 
 export default function MainLoyauts() {
   const { t } = useTranslation();
-  const location = useLocation();
   const [menuValue, setMenuValue] = useState("");
-
-  // Close on route change
-  useEffect(() => {
-    setMenuValue("");
-  }, [location.pathname]);
 
   // Close on scroll or outside touch
   useEffect(() => {
@@ -58,7 +52,7 @@ export default function MainLoyauts() {
                 <span
                   className="text-lg sm:text-xl font-bold tracking-tight font-display"
                 >
-                  Dostonbek
+                  Adxamovv
                   <span className="inline-block w-1.5 h-1.5 sm:w-1.75 sm:h-1.75 bg-amber-500 rounded-full ml-1 relative -top-0.5"></span>
                 </span>
               </Link>
@@ -118,6 +112,7 @@ export default function MainLoyauts() {
                         <MenubarItem key={item.to} className="cursor-pointer rounded-lg">
                           <Link
                             to={item.to}
+                            onClick={() => setMenuValue("")}
                             className="w-full flex items-center gap-2.5 px-1 py-1.5 font-medium text-sm no-underline"
                           >
                             {item.icon}
@@ -131,6 +126,7 @@ export default function MainLoyauts() {
                       <MenubarItem className="cursor-pointer rounded-lg">
                         <Link
                           to="/contact"
+                          onClick={() => setMenuValue("")}
                           className="w-full flex items-center gap-2.5 px-1 py-1.5 font-medium text-sm no-underline"
                         >
                           <Mail size={15} />
@@ -153,7 +149,18 @@ export default function MainLoyauts() {
       </main>
 
       <footer className="w-full border-t">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-2 sm:py-3">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-4 sm:py-5 space-y-3">
+          <nav aria-label="Footer navigation" className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="text-xs font-medium opacity-70 hover:opacity-100 hover:text-amber-500 transition-colors no-underline"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
           <p className="text-xs font-medium text-center opacity-60">
             {t("footer.rights")}
           </p>

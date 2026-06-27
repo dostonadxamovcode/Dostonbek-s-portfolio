@@ -47,6 +47,7 @@ export default function ProjectCard({ project, featured = false }) {
           src={image}
           alt={`${title} — preview`}
           loading="lazy"
+          decoding="async"
           width={1280}
           height={800}
           className="h-full w-full object-cover object-top [backface-visibility:hidden] [transform:translateZ(0)] transition-transform duration-500 ease-out group-hover/media:scale-[1.02]"
